@@ -1,0 +1,9 @@
+page-login {
+    .logo {
+        background-color: map-get($map: $colors, $key: primary);
+        width: 75%;
+        height: 300px;
+        margin: auto;
+        text-align: center;
+    }
+}

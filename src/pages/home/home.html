@@ -1,17 +1,50 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Home</ion-title>      
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <button ion-item (click)="goToHome()">
+          Info
+        </button>
+        <button ion-item (click)="goToSymptoms()">
+          Symptoms
+        </button>
+        <button ion-item (click)="goToProviders()">
+          Find a Provider
+        </button>
+        <button ion-item (click)="goToCamera()">
+          Thermal Camera
+        </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+<ion-content #content padding>
+  <ion-card>
+    <div class="logo" center>
+      <img src="../../assets/imgs/pill_logo.png" width="250px" height="300px" center>
+    </div>
+  </ion-card>
+  <ion-fab left bottom>
+    <button ion-fab color="primary" (click)="toggleMenu()">
+      <ion-icon name="menu">
+      </ion-icon>
+    </button>
+  </ion-fab>
+  <ion-card>
+    <p padding>
+      Use the menu button below to use the thermal 
+      camera tool to identify medical issue sources or
+      manually select the symptoms you are experiencing. 
+    </p>
+  </ion-card>
 </ion-content>
